@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass, fondoanchor" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.GestionUsuariosController">
+   <children>
+      <VBox layoutY="0.0" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="fondbox" stylesheets="@../CSS/estilo1.css">
+               <children>
+                  <Label prefHeight="92.0" prefWidth="573.0" styleClass="labels" stylesheets="@../CSS/estilo1.css" text="Gestion de Usuarios" textFill="WHITE">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="5.0" prefWidth="800.0" />
+            <HBox alignment="CENTER" prefHeight="444.0" prefWidth="800.0">
+               <children>
+                  <Pane prefHeight="417.0" prefWidth="755.0" stylesheets="@../CSS/estilo1.css">
+                     <children>
+                        <SplitPane focusTraversable="true" layoutX="-8.0" layoutY="5.0" prefHeight="434.0" prefWidth="772.0">
+                           <items>
+                              <TabPane prefHeight="438.0" prefWidth="770.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Sucursales">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="500.0">
+                                                   <children>
+                                                      <TableView id="tablaSucursales" fx:id="tablaSucursales" layoutX="8.0" layoutY="57.0" onMouseClicked="#getSucursalSeleccionada" prefHeight="304.0" prefWidth="485.0" />
+                                                      <TextField fx:id="txtBuscarSucursal" layoutX="27.0" layoutY="20.0" prefWidth="200.0" promptText="Ingrese la sucursal a buscar" />
+                                                      <Button fx:id="btBuscarSucursal" layoutX="243.0" layoutY="20.0" mnemonicParsing="false" onAction="#buscarSucursal" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Buscar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" fx:id="x2" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btActualizarSucursales" layoutX="323.0" layoutY="20.0" mnemonicParsing="false" onAction="#actualizarSucursales" styleClass="botones" text="Actualizar tabla" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="512.0" prefHeight="396.0" prefWidth="258.0">
+                                                   <children>
+                                                      <Label layoutX="35.0" layoutY="24.0" prefHeight="20.0" prefWidth="200.0" text="Mantenimiento de Sucursales" textAlignment="LEFT">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" fx:id="x3" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="20.0" layoutY="63.0" text="Nombre" />
+                                                      <Label layoutX="19.0" layoutY="137.0" text="Ciudad" />
+                                                      <Label layoutX="20.0" layoutY="100.0" text="Pais" />
+                                                      <Label layoutX="18.0" layoutY="174.0" prefHeight="17.0" prefWidth="54.0" text="Dirección" />
+                                                      <TextField fx:id="txtNombreSucursal" layoutX="79.0" layoutY="60.0" prefHeight="25.0" prefWidth="160.0" promptText="Nombre sucursal" />
+                                                      <Label layoutX="17.0" layoutY="208.0" prefHeight="17.0" prefWidth="54.0" text="Teléfono" />
+                                                      <TextField fx:id="txtPaisSucursal" layoutX="78.0" layoutY="96.0" prefHeight="25.0" prefWidth="160.0" promptText="Pais sucursal" />
+                                                      <TextField fx:id="txtCiudadSucursal" layoutX="78.0" layoutY="132.0" prefHeight="25.0" prefWidth="160.0" promptText="Ciudad sucursal" />
+                                                      <TextField fx:id="txtDireccionSucursal" layoutX="78.0" layoutY="169.0" prefHeight="25.0" prefWidth="160.0" promptText="Diirección sucursal" />
+                                                      <TextField fx:id="txtTelefonoSucursal" layoutX="78.0" layoutY="205.0" prefHeight="25.0" prefWidth="160.0" promptText="Teléfono sucursal" />
+                                                      <TextField fx:id="txtEmailSucursal" layoutX="78.0" layoutY="241.0" prefHeight="25.0" prefWidth="160.0" promptText="Email sucursal" />
+                                                      <Label layoutX="17.0" layoutY="246.0" prefHeight="17.0" prefWidth="54.0" text="Email" />
+                                                      <Button fx:id="btAddSucursal" font="$x2" layoutX="42.0" layoutY="279.0" mnemonicParsing="false" onAction="#addSucursal" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Añadir" textFill="WHITE" />
+                                                      <Button fx:id="btNuevaSucursal" font="$x2" layoutX="42.0" layoutY="348.0" mnemonicParsing="false" onAction="#nuevaSucursal" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Nuevo" textFill="WHITE" />
+                                                      <Button fx:id="btModificarSucursal" font="$x2" layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#modificarSucursal" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../css/estilo1.css" text="Modificar" textFill="WHITE" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Proveedores">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="500.0">
+                                                   <children>
+                                                      <TableView id="tablaProveedores" fx:id="tablaProveedores" layoutX="8.0" layoutY="57.0" onMouseClicked="#getProveedorSeleccionado" prefHeight="304.0" prefWidth="485.0" />
+                                                      <TextField fx:id="txtBuscarProveedor" layoutX="27.0" layoutY="20.0" prefWidth="200.0" promptText="Ingrese el proveedor a buscar" />
+                                                      <Button fx:id="btBuscarProveedor" layoutX="243.0" layoutY="20.0" mnemonicParsing="false" onAction="#buscarProveedor" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Buscar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" fx:id="x21" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btActualizarProveedores" layoutX="323.0" layoutY="20.0" mnemonicParsing="false" onAction="#actualizarProveedores" styleClass="botones" text="Actualizar tabla" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="512.0" prefHeight="394.0" prefWidth="258.0">
+                                                   <children>
+                                                      <Label layoutX="30.0" layoutY="24.0" prefHeight="20.0" prefWidth="212.0" text="Mantenimiento de Proveedores" textAlignment="LEFT">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" fx:id="x31" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="20.0" layoutY="107.0" text="Nombre" />
+                                                      <Label layoutX="18.0" layoutY="178.0" text="Ciudad" />
+                                                      <Label layoutX="20.0" layoutY="141.0" prefHeight="17.0" prefWidth="43.0" text="Pais" />
+                                                      <TextField fx:id="txtRutProveedor" layoutX="78.0" layoutY="68.0" prefHeight="25.0" prefWidth="160.0" promptText="RUT del proveedor" />
+                                                      <TextField fx:id="txtNombreProveedor" layoutX="79.0" layoutY="103.0" prefHeight="25.0" prefWidth="160.0" promptText="Nombre proveedor" />
+                                                      <Label layoutX="16.0" layoutY="213.0" prefHeight="17.0" prefWidth="54.0" text="Teléfono" />
+                                                      <TextField fx:id="txtPaisProveedor" layoutX="78.0" layoutY="138.0" prefHeight="25.0" prefWidth="160.0" promptText="Pais proveedor" />
+                                                      <TextField fx:id="txtCiudadProveedor" layoutX="78.0" layoutY="173.0" prefHeight="25.0" prefWidth="160.0" promptText="Ciudad proveedor" />
+                                                      <TextField fx:id="txtTelefonoProveedor" layoutX="78.0" layoutY="208.0" prefHeight="25.0" prefWidth="160.0" promptText="Teléfono proveedor" />
+                                                      <TextField fx:id="txtEmailProveedor" layoutX="78.0" layoutY="243.0" prefHeight="25.0" prefWidth="160.0" promptText="Email proveedor" />
+                                                      <Label layoutX="17.0" layoutY="247.0" prefHeight="17.0" prefWidth="54.0" text="Email" />
+                                                      <Button fx:id="btAddProveedor" font="$x2" layoutX="42.0" layoutY="279.0" mnemonicParsing="false" onAction="#addProveedor" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Añadir" textFill="WHITE" />
+                                                      <Button fx:id="btNuevoProveedor" font="$x2" layoutX="42.0" layoutY="348.0" mnemonicParsing="false" onAction="#nuevoProveedor" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Nuevo" textFill="WHITE" />
+                                                      <Button fx:id="btModificarProveedor" font="$x2" layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#modificarProveedor" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../css/estilo1.css" text="Modificar" textFill="WHITE" />
+                                                      <Label layoutX="20.0" layoutY="72.0" text="RUT" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Pane>
+               </children>
+               <VBox.margin>
+                  <Insets fx:id="x1" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane prefHeight="29.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="btMenu" layoutX="667.0" layoutY="-1.0" mnemonicParsing="false" onAction="#irInicioContenido" prefHeight="27.0" prefWidth="114.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Menu Principal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

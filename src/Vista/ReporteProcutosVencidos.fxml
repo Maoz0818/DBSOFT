@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="610.0">
+         <children>
+            <HBox prefHeight="120.0" prefWidth="587.0" styleClass="fondbox" stylesheets="@../CSS/estilo1.css">
+               <children>
+                  <Label styleClass="labels" text="Reporte de Productos Vencidos" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="4.0" prefWidth="600.0" />
+            <HBox prefHeight="279.0" prefWidth="600.0">
+               <children>
+                  <Pane prefHeight="279.0" prefWidth="600.0" stylesheets="@../CSS/estilo1.css">
+                     <children>
+                        <AnchorPane layoutY="-3.0" prefHeight="353.0" prefWidth="610.0" stylesheets="@../CSS/estilo1.css">
+                           <children>
+                              <Button fx:id="cerrar" layoutX="442.0" layoutY="221.0" mnemonicParsing="false" onAction="#cerrarSesion" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Menu Principal" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

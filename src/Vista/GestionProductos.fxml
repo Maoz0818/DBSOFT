@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass, fondoanchor" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.GestionProductosController">
+  <children>
+    <VBox layoutY="0.0" prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="fondbox" stylesheets="@../CSS/estilo1.css">
+          <children>
+            <Label prefHeight="92.0" prefWidth="573.0" styleClass="labels" stylesheets="@../CSS/estilo1.css" text="Gestion de Productos y Existencias" textFill="WHITE">
+              <effect>
+                <Bloom />
+              </effect>
+                     <HBox.margin>
+                        <Insets left="20.0" top="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+            </Label>
+          </children>
+          <effect>
+            <InnerShadow />
+          </effect>
+          <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="5.0" prefWidth="800.0" />
+        <HBox alignment="CENTER" prefHeight="419.0" prefWidth="800.0">
+          <children>
+            <Pane prefHeight="417.0" prefWidth="755.0" stylesheets="@../CSS/estilo1.css">
+              <children>
+                <SplitPane dividerPositions="0.6697736351531292" focusTraversable="true" layoutX="-8.0" layoutY="5.0" prefHeight="412.0" prefWidth="772.0">
+                  <items>
+                              <TabPane prefHeight="392.0" prefWidth="524.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Existencias">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                      <AnchorPane fx:id="productoexistid" minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="500.0">
+                                        <children>
+                                          <TableView id="tablaExistencias" fx:id="tablaExistencias" layoutX="8.0" layoutY="57.0" onMouseClicked="#getExistenciaSeleccionada" prefHeight="304.0" prefWidth="485.0" />
+                                          <TextField fx:id="txtBuscarExistencia" layoutX="27.0" layoutY="20.0" prefWidth="200.0" promptText="Ingrese el producto a buscar" />
+                                          <Button fx:id="btBuscarExistencia" layoutX="243.0" layoutY="20.0" mnemonicParsing="false" onAction="#buscarExistencia" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Buscar" textFill="WHITE">
+                                            <font>
+                                              <Font name="System Bold" size="12.0" fx:id="x2" />
+                                            </font>
+                                          </Button>
+                                                      <Button fx:id="btActualizarExistencias" layoutX="323.0" layoutY="20.0" mnemonicParsing="false" onAction="#actualizarExistencias" styleClass="botones" text="Actualizar tabla" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                        </children>
+                                      </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                              <TabPane prefHeight="392.0" prefWidth="245.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Existencias">
+                                       <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="245.0">
+                                  <children>
+                                    <Label layoutX="25.0" layoutY="14.0" prefHeight="20.0" prefWidth="200.0" text="Mantenimiento de Existencias" textAlignment="LEFT">
+                                      <font>
+                                        <Font name="System Bold" size="14.0" fx:id="x3" />
+                                      </font>
+                                    </Label>
+                                    <Label layoutX="8.0" layoutY="49.0" text="Codigo" />
+                                    <Label layoutX="8.0" layoutY="89.0" text="Ubicacion" />
+                                    <ComboBox id="cbProductoCategoria" fx:id="cbUbicacion" layoutX="70.0" layoutY="83.0" prefHeight="27.0" prefWidth="160.0" promptText="Seleccionar">
+                                      <items>
+                                        <FXCollections fx:factory="observableArrayList" />
+                                      </items>
+                                    </ComboBox>
+                                    <Label layoutX="7.0" layoutY="129.0" text="Proveedor" />
+                                    <ComboBox id="cbProductoMarca" fx:id="cbProveedor" layoutX="70.0" layoutY="125.0" prefHeight="27.0" prefWidth="160.0" promptText="Seleccionar">
+                                      <items>
+                                        <FXCollections fx:factory="observableArrayList" />
+                                      </items>
+                                    </ComboBox>
+                                                <Label layoutX="9.0" layoutY="172.0" prefHeight="17.0" prefWidth="29.0" text="Tipo" />
+                                                <ComboBox fx:id="cbTipo" layoutX="70.0" layoutY="168.0" prefHeight="25.0" prefWidth="160.0" promptText="Seleccionar" />
+                                                <Label layoutX="8.0" layoutY="213.0" prefHeight="17.0" prefWidth="54.0" text="Nombre" />
+                                                <TextField fx:id="txtNombrePro" layoutX="71.0" layoutY="209.0" prefHeight="25.0" prefWidth="160.0" promptText="nombre  producto" />
+                                                <Label layoutX="9.0" layoutY="253.0" text="Precio" />
+                                                <TextField fx:id="txtPrecio" layoutX="71.0" layoutY="249.0" prefHeight="25.0" prefWidth="160.0" promptText="\$" />
+                                                <Label layoutX="9.0" layoutY="291.0" text="Marca" />
+                                                <TextField fx:id="txtMarca" layoutX="72.0" layoutY="287.0" prefHeight="25.0" prefWidth="160.0" />
+                                                <Label layoutX="9.0" layoutY="329.0" text="Cantidad" />
+                                                <TextField fx:id="txtCantidad" layoutX="73.0" layoutY="326.0" prefHeight="25.0" prefWidth="114.0" promptText="unidades" />
+                                                <Label fx:id="lbCod" layoutX="100.0" layoutY="44.0" prefHeight="17.0" prefWidth="101.0" textFill="#f20303">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                  </children>
+                                </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                  </items>
+                </SplitPane>
+              </children>
+              <effect>
+                <InnerShadow />
+              </effect>
+            </Pane>
+          </children>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+            <AnchorPane prefHeight="65.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="btMenu" layoutX="672.0" layoutY="18.0" mnemonicParsing="false" onAction="#irInicioContenido" prefHeight="27.0" prefWidth="114.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Menu Principal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btAddExistencia" font="$x2" layoutX="376.0" layoutY="18.0" mnemonicParsing="false" onAction="#addExistencia" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Añadir" textFill="WHITE" />
+                  <Button fx:id="btModificarExistencia" font="$x2" layoutX="196.0" layoutY="18.0" mnemonicParsing="false" onAction="#modificarExistencia" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../css/estilo1.css" text="Modificar" textFill="WHITE" />
+                  <Button fx:id="btNuevaExistecia1" font="$x2" layoutX="16.0" layoutY="18.0" mnemonicParsing="false" onAction="#nuevaExistencia" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Nuevo" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

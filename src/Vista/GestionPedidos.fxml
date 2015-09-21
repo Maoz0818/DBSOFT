@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screensframework.GestionPedidosController">
+   <children>
+      <VBox prefHeight="655.0" prefWidth="800.0">
+         <children>
+            <HBox prefHeight="119.0" prefWidth="800.0" spacing="20.0" styleClass="fondbox" stylesheets="@../CSS/estilo1.css">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="353.0" styleClass="labels" stylesheets="@../CSS/estilo1.css" text="Gestion de Pedidos" textFill="WHITE">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="56.0" prefHeight="71.0" prefWidth="151.0" styleClass="labels" stylesheets="@../CSS/estilo1.css" text="Sucursal" textFill="WHITE">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="90.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lbCodSucursal" layoutX="495.0" layoutY="31.0" prefHeight="71.0" prefWidth="118.0" styleClass="labels" stylesheets="@../CSS/estilo1.css" textFill="WHITE">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="5.0" prefWidth="800.0" />
+            <HBox alignment="CENTER" prefHeight="491.0" prefWidth="800.0">
+               <children>
+                  <Pane prefHeight="463.0" prefWidth="755.0" stylesheets="@../CSS/estilo1.css">
+                     <children>
+                        <SplitPane dividerPositions="0.6697736351531292" focusTraversable="true" layoutX="-8.0" layoutY="5.0" prefHeight="475.0" prefWidth="772.0">
+                           <items>
+                              <TabPane prefHeight="480.0" prefWidth="513.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Pedidos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane fx:id="productoexistid" minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="513.0">
+                                                   <children>
+                                                      <TableView id="tablaDespachos" fx:id="tablaPedidos" layoutX="11.0" layoutY="65.0" onMouseClicked="#getPedidoSeleccionado" prefHeight="133.0" prefWidth="490.0" />
+                                                      <TableView id="tablaDetallesDespacho" fx:id="tablaDetallesPedido" layoutX="10.0" layoutY="238.0" onMouseClicked="#getDetallePedidoSeleccionado" prefHeight="188.0" prefWidth="492.0" />
+                                                      <TextField fx:id="txtBuscarPedido" layoutX="17.0" layoutY="20.0" prefWidth="200.0" promptText="Codigo del pedido" />
+                                                      <Button fx:id="btBuscarPedido" layoutX="236.0" layoutY="20.0" mnemonicParsing="false" onAction="#buscarPedido" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Buscar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" fx:id="x2" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btActualizarPedidos" layoutX="310.0" layoutY="20.0" mnemonicParsing="false" onAction="#actualizarPedidos" styleClass="botones" text="Actualizar tablas" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btActualizarDetallePedido" layoutX="10.0" layoutY="204.0" mnemonicParsing="false" onAction="#actualizarDetallePedido" styleClass="botones" text="Detalle de Pedido Seleccionado" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Productos en Exitencia">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane fx:id="productoexistid11" minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="513.0">
+                                                   <children>
+                                                      <TableView id="tablaExistencias" fx:id="tablaExistencias" layoutX="13.0" layoutY="57.0" prefHeight="357.0" prefWidth="488.0" />
+                                                      <TextField fx:id="txtBuscarExistencias" layoutX="27.0" layoutY="20.0" prefWidth="200.0" promptText="Ingrese el nombre del producto" />
+                                                      <Button fx:id="btBuscarExistencia" layoutX="243.0" layoutY="20.0" mnemonicParsing="false" onAction="#buscarExistencia" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Buscar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" fx:id="x211" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btActualizarExistencias" layoutX="323.0" layoutY="20.0" mnemonicParsing="false" onAction="#actualizarExistencias" styleClass="botones" text="Actualizar tabla" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                              <TabPane prefHeight="474.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Formulario Pedidos">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="245.0">
+                                             <children>
+                                                <Label layoutX="27.0" layoutY="14.0" prefHeight="20.0" prefWidth="197.0" text="Mantenimiento de Pedidos" textAlignment="LEFT">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" fx:id="x3" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="7.0" layoutY="55.0" text="Codigo Pedido" />
+                                                <Label layoutX="8.0" layoutY="99.0" text="Estado" />
+                                                <ComboBox id="cbEstado" fx:id="cbEstado" layoutX="70.0" layoutY="96.0" prefHeight="27.0" prefWidth="160.0" promptText="Seleccionar" />
+                                                <Label layoutX="7.0" layoutY="289.0" prefHeight="17.0" prefWidth="60.0" text="Productos" />
+                                                <ComboBox fx:id="cbProductos" layoutX="70.0" layoutY="285.0" prefHeight="25.0" prefWidth="160.0" promptText="Seleccionar" />
+                                                <Label layoutX="9.0" layoutY="329.0" text="Cantidad" />
+                                                <TextField fx:id="txtCantidad" layoutX="70.0" layoutY="324.0" prefHeight="25.0" prefWidth="114.0" promptText="unidades" />
+                                                <Label fx:id="lbPedidoId" layoutX="126.0" layoutY="50.0" prefHeight="27.0" prefWidth="82.0" textFill="RED">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btCrearPedido" font="$x2" layoutX="70.0" layoutY="145.0" mnemonicParsing="false" onAction="#crearPedido" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Crear Pedido" textFill="WHITE" />
+                                                <Button fx:id="btModificarPedido" font="$x2" layoutX="71.0" layoutY="186.0" mnemonicParsing="false" onAction="#modificarPedido" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../css/estilo1.css" text="Modificar Pedido" textFill="WHITE" />
+                                                <Button fx:id="btCrearDetalle" font="$x2" layoutX="71.0" layoutY="362.0" mnemonicParsing="false" onAction="#nuevoDetalle" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Añadir Item" textFill="WHITE" />
+                                                <Button fx:id="btModificarDetalle" font="$x2" layoutX="71.0" layoutY="400.0" mnemonicParsing="false" onAction="#modificarDetalle" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Modificar Item" textFill="WHITE" />
+                                                <Label layoutX="7.0" layoutY="246.0" text="Codigo Item" />
+                                                <Label fx:id="lbDetalleid" layoutX="91.0" layoutY="242.0" prefHeight="27.0" prefWidth="82.0" textFill="#f20303">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Pane>
+               </children>
+               <VBox.margin>
+                  <Insets fx:id="x1" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane prefHeight="62.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="btMenu" layoutX="651.0" layoutY="14.0" mnemonicParsing="false" onAction="#irInicioContenido" prefHeight="27.0" prefWidth="114.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Menu Principal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btNuevoPedido" font="$x2" layoutX="371.0" layoutY="14.0" mnemonicParsing="false" onAction="#nuevoPedido" prefHeight="27.0" prefWidth="160.0" styleClass="botones" stylesheets="@../CSS/estilo1.css" text="Nuevo Pedido" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
